@@ -1,0 +1,42 @@
+{% extends 'catalog/main.html' %}
+
+{% block content %}
+<body>
+
+<main role="main">
+
+  <section id="offres" class="jumbotron text-center">
+    <div class="container">
+      <h1>Destinations de voyages</h1>
+      <p class="lead text-muted">Evadez-vous dans un monde d’exceptionnelles destinations </p>
+
+    </div>
+  </section>
+
+
+<div class="card-group mb-5">
+        {% for offer in offers %}
+
+<div class="card" style="width: 18rem;">
+
+  <img class="card-img-top" src="../../static/images/img_3.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ offer.name }}</h5>
+    <p class="card-text">{{ offer.description }}</p>
+    <small class="text-muted">Prix : {{ offer.price }} CHF</small>
+  </div>
+</div>
+
+
+
+
+        {% endfor %}
+</div>
+
+
+
+</main>
+
+
+</body>
+{% endblock %}
