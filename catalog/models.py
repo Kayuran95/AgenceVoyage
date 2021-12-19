@@ -9,7 +9,7 @@ class User(AbstractUser):
 
 
 class Offer(models.Model):
-    """Cet objet représente une catégorie ou un genre littéraire."""
+    """Cet objet représente un voyage."""
     name = models.CharField(max_length=200, null=True)
     description = models.TextField(max_length=20000, null=True)
     price = models.CharField(max_length=200, null=True)

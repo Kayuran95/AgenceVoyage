@@ -1,0 +1,45 @@
+{% extends 'catalog/main.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/calculator.css' %}">
+
+    <div id="container">
+        <h1>Billets Calculator</h1>
+        <div id="calculator">
+
+
+            <form>
+                <p>Combien coûtent le billet au total?
+                <p>
+                    CHF <input id="prixBillet" type="text" placeholder="Prix Billet">
+
+                <p>Choix de la classe?
+                <p>
+                    <select id="classeType">
+                        <option disabled selected value="0">-- Choisir une option --</option>
+                        <option value="0.3">30&#37; &#45; First Class</option>
+                        <option value="0.2">20&#37; &#45; Business Class</option>
+                        <option value="0.05">5&#37; &#45; Economy Class</option>
+                    </select>
+
+            </form>
+            <p>Nombre de personne?</p>
+            <input id="nombrePersonne" type="text" placeholder="Nombre de personne"> personne(s)
+            <button type="button" id="calculate">Calculer!</button>
+
+        </div>
+
+        <div id="prixTotal">
+            <sup>CHF</sup><span id="prix">0.00</span>
+            <small id="parPersonne">de plus par personne</small>
+        </div>
+
+
+    </div>
+
+
+    <script type="text/javascript" src="../../static/js/main.js"></script>
+
+
+{% endblock %}

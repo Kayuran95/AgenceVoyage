@@ -1,42 +1,83 @@
 {% extends 'catalog/main.html' %}
 
 {% block content %}
-<body>
+    <body>
 
-<main role="main">
+    <main role="main">
 
-  <section id="offres" class="jumbotron text-center">
-    <div class="container">
-      <h1>Destinations de voyages</h1>
-      <p class="lead text-muted">Evadez-vous dans un monde d’exceptionnelles destinations </p>
+        <section id="offres" class="jumbotron text-center">
+            <div class="container">
+                <h1>Destinations de voyages</h1>
+                <p class="lead text-muted">Evadez-vous dans un monde d’exceptionnelles destinations </p>
 
-    </div>
-  </section>
+            </div>
 
 
-<div class="card-group mb-5">
-        {% for offer in offers %}
+        </section>
 
-<div class="card" style="width: 18rem;">
 
-  <img class="card-img-top" src="../../static/images/img_3.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{ offer.name }}</h5>
-    <p class="card-text">{{ offer.description }}</p>
-    <small class="text-muted">Prix : {{ offer.price }} CHF</small>
-  </div>
-</div>
+        <div class="container text-center my-3"><br><br>
+            <h2 class="font-weight-light">Liste des voyages</h2>
+            <div class="row mx-auto my-auto justify-content-center">
+                <div id="recipeCarousel1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+
+
+                        {% for offer in offers %}
 
 
 
-
-        {% endfor %}
-</div>
+                            <div class='carousel-item {% if forloop.counter0 == 0 %}active{% endif %}'>
 
 
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <img class="card-img-top" src="../../static/images/img_3.png"
+                                                 alt="Card image cap">
 
-</main>
+                                            <div name="card-body" style="height:250px;overflow: hidden"
+                                                 class="card-body">
+                                                <h5 class="card-title">{{ offer.name }} <small> {{ offer.price }}
+                                                    CHF</small></h5>
+                                                <p class="card-text">{{ offer.description }} </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-</body>
+
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel1" role="button"
+                       data-bs-slide="prev">
+                        <button id="togg1" class="carousel-control-prev-icon bg-dark" aria-hidden="true"></button>
+                    </a>
+                    <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel1" role="button"
+                       data-bs-slide="next">
+                        <button id="togg2" class="carousel-control-next-icon bg-dark " aria-hidden="true"></button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+    </body>
+
+
+
+
+
 {% endblock %}
