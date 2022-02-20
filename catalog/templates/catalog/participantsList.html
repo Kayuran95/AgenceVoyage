@@ -1,0 +1,38 @@
+{% extends 'catalog/main.html' %}
+{% load static %}
+
+
+{% block content %}
+    <body>
+
+    <main role="main">
+
+        <section id="offres" class="jumbotron text-center">
+            <div class="container">
+                <h1>Gagnez un voyage pour deux !</h1>
+                <p class="lead text-muted">Pour participer : Remplissez les champs et partagez votre destination de rêve
+                    dans l'onglet Concours!</p>
+
+            </div>
+
+        </section>
+
+
+        <h3>
+            <script src="{% static '/js/ajax.js' %}"></script>
+            <script src="{% static '/js/ajaxsyn.js' %}"></script>
+            <button id="btnPart" class="btnPart">Liste des participants asynchrone</button>
+            <button id="btnPart2" class="btnPart2">Liste des participants synchrone</button>
+        </h3>
+
+        <div id="nom-post">
+
+        </div>
+
+
+    </main>
+    </body>
+
+
+
+{% endblock %}

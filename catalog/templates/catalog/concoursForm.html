@@ -1,0 +1,28 @@
+{% extends 'catalog/main.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+    <main role="main">
+
+        <section id="offres" class="jumbotron text-center">
+            <div class="container">
+                <h1>Gagnez un voyage pour deux !</h1>
+                <p class="lead text-muted">Pour participer : Remplissez les champs et partagez votre destination de rêve
+                    dans Message</p>
+
+            </div>
+
+
+        </section>
+
+        <form class="text-center" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save"/>
+        </form>
+    </main>
+
+
+
+{% endblock %}

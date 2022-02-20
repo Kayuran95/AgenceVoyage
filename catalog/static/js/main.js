@@ -33,11 +33,6 @@ function calculPrix() {
 document.getElementById("prixTotal").style.display = "none";
 document.getElementById("parPersonne").style.display = "none";
 
-//click pour appeler la fonction
-document.getElementById("calculate").onclick = function () {
-    calculPrix();
-
-};
 
 //changement de la couleur aléatoire du btn
 
@@ -55,6 +50,11 @@ function changeBackground() {
 btn.addEventListener('click', changeBackground);
 
 
+//click pour appeler la fonction
+document.getElementById("calculate").onclick = function () {
+    calculPrix();
+
+};
 //ajout de texte
 
 function addElement() {
@@ -63,7 +63,7 @@ function addElement() {
     // et lui donne un peu de contenu
     var newContent = document.createTextNode('Passez un bon voyage!');
     // ajoute le nœud texte au nouveau div créé
-    newDiv.appendChild(newContent);
+    newDiv.appendChild(newContent);//ajoute un nœud à la fin de la liste des enfants d'un nœud parent spécifié
 
     // ajoute le nouvel élément créé et son contenu dans le DOM
     var currentDiv = document.getElementById('container');

@@ -14,8 +14,19 @@ class Offer(models.Model):
     description = models.TextField(max_length=20000, null=True)
     price = models.CharField(max_length=200, null=True)
 
-
     def __str__(self):
         """Cette fonction est obligatoirement requise par Django.
                Elle retourne une chaîne de caractère pour identifier l'instance de la classe d'objet."""
         return self.name
+
+
+class Participant(models.Model):
+    """Cet objet représente un participant."""
+    nom = models.CharField(max_length=200, null=True)
+    message = models.TextField(max_length=20000, null=True)
+    email = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        """Cette fonction est obligatoirement requise par Django.
+                   Elle retourne une chaîne de caractère pour identifier l'instance de la classe d'objet."""
+        return self.nom
